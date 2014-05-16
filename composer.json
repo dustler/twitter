@@ -1,0 +1,33 @@
+{
+    "name": "Experimental/Twitter",
+    "description": "Twitter, Auth, I/O",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Dmitry Gavriloff",
+            "email": "info@imega.ru"
+        }
+    ],
+    "autoload": {
+        "classmap": ["vendor/", "tests/"]
+    },
+    "require": {
+        //"abraham/twitteroauth": "*",
+        "themattharris/tmhOAuth": "*"
+    },
+    "require-dev": {
+        "phpunit/dbunit": "1.3.0",
+        "phpunit/phpunit": "3.7.28",
+        "fzaninotto/faker": "1.3.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/themattharris/tmhOAuth.git"
+        },
+        {
+            //"type": "vcs",
+            //"url": "https://github.com/abraham/twitteroauth.git"
+        }
+    ]
+}
