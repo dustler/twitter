@@ -11,6 +11,6 @@ class TwitterTest extends PHPUnit_Framework_TestCase {
         $api->oAuthToken = '477071837-9SzUZo6wTpp9ti157O29OrLJE1Pdw78XYINoNgkA';
         $api->oAuthSecret = 'fFhZivjgFpEUq52ogq5ot7fx5ebmAvdj0zb3KAiPMhO0M';
         $api->init();
-        $api->status('bla bla bla');
+        $api->message('imf4wsh', 'bla bla bla');
     }
 }

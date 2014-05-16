@@ -19,6 +19,8 @@ class Api {
      * @var \TwitterOAuth
      */
     protected $gate;
+    public function __construct()
+    {}
     public function init()
     {
         $this->gate = new TwitterOAuth(
@@ -27,7 +29,7 @@ class Api {
             $this->oAuthToken,
             $this->oAuthSecret
         );
-        $this->gate->get('account/verify_credentials');
+        //$this->gate->get('account/verify_credentials');
     }
     public function message($user, $message)
     {

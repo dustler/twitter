@@ -12,7 +12,8 @@
         "classmap": ["src/", "vendor/", "tests/"]
     },
     "require": {
-        "themattharris/tmhOAuth": "*"
+        "themattharris/tmhOAuth": "*",
+        "vt/worker": "dev-master"
     },
     "require-dev": {
         "phpunit/dbunit": "1.3.0",
@@ -23,6 +24,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/themattharris/tmhOAuth.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:vasiliy-t/worker-application.git"
         }
     ]
 }
