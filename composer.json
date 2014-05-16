@@ -9,7 +9,7 @@
         }
     ],
     "autoload": {
-        "classmap": ["vendor/", "tests/"]
+        "classmap": ["src/", "vendor/", "tests/"]
     },
     "require": {
         "themattharris/tmhOAuth": "*"

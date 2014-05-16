@@ -19,7 +19,7 @@ class Api {
      * @var \TwitterOAuth
      */
     protected $gate;
-    public function __construct()
+    public function init()
     {
         $this->gate = new TwitterOAuth(
             $this->consumerKey,
@@ -27,10 +27,11 @@ class Api {
             $this->oAuthToken,
             $this->oAuthSecret
         );
-
+        $this->gate->get('account/verify_credentials');
     }
-    public function status($message)
+    public function message($user, $message)
     {
-        $this->gate->post('statuses/update', array('status' => $message));
+        $this->gate->post('direct_messages/new',
+            array('user' => $user, 'text' => $message));
     }
 }
