@@ -13,7 +13,9 @@
     },
     "require": {
         "themattharris/tmhOAuth": "*",
-        "vt/worker": "dev-master"
+        "core/worker-application": "1.0.0",
+        "monolog/monolog": "1.9.1",
+        "core/log-service-provider": "dev-master"
     },
     "require-dev": {
         "phpunit/dbunit": "1.3.0",
@@ -27,7 +29,11 @@
         },
         {
             "type": "vcs",
-            "url": "git@github.com:vasiliy-t/worker-application.git"
+            "url": "git@git.nethouse.ru:core/worker-application.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@git.nethouse.ru:core/log-service-provider.git"
         }
     ]
 }

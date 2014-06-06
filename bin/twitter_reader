@@ -1,0 +1,16 @@
+#!/usr/bin/php -q
+<?php
+
+define('APPLICATION_PATH', dirname(__FILE__) . "/../src");
+define('APPLICATION_ENV', 'production');
+
+require __DIR__ . "/../vendor/autoload.php";
+
+use VT\Worker\Application;
+use Psr\Log\LogLevel;
+
+$application = new Application(require_once APPLICATION_PATH . '/../config/app.php');
+$application->register(new Nethouse\Provider\LogServiceProvider());
+$application->register(new Nethouse\Provider\NormServiceProvider());
+$application->get('logger')->log(LogLevel::INFO, 'STARTING WORK', array('pid'=>getmypid()));
+$application->run();
