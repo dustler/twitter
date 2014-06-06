@@ -5,12 +5,20 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $application = new VT\Worker\Application();
 
-$application->handler = new \Twitter\Client(
-    $options = array(
-        'consumerKey' => 'InbRMKMKnOlE51mwTLPzxkUck',
-        'consumerSecret' => 'WUDvfZB22tYykKg9dVGhmvZAKDWrnSveQSlgGE1lmZLXH4H1FV',
-        'oAuthToken' => '477071837-9SzUZo6wTpp9ti157O29OrLJE1Pdw78XYINoNgkA',
-        'oAuthSecret' => 'fFhZivjgFpEUq52ogq5ot7fx5ebmAvdj0zb3KAiPMhO0M'
-));
+$options = array(
+    'consumerKey' => 'InbRMKMKnOlE51mwTLPzxkUck',
+    'consumerSecret' => 'WUDvfZB22tYykKg9dVGhmvZAKDWrnSveQSlgGE1lmZLXH4H1FV',
+    'oAuthToken' => '477071837-9SzUZo6wTpp9ti157O29OrLJE1Pdw78XYINoNgkA',
+    'oAuthSecret' => 'fFhZivjgFpEUq52ogq5ot7fx5ebmAvdj0zb3KAiPMhO0M'
+);
 
+$application['amqp.options'] = array(
+    "host" => "dinbe1.majordomo.ru",
+    "port" => 5672,
+    "vhost" => "/",
+    "login" => "guest",
+    "password" => "guest",
+);
+
+$application['handler'] = new \Twitter\Worker($application);
 $application->run();
